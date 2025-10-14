@@ -63,17 +63,17 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">R<sup>2</sup>: A Novel Recall & Ranking Framework for Legal Judgment Prediction</h1>
+          <h1 class="title is-2 publication-title">On Imbalance in Case Types: Evaluating and Enhancing PLMs for Criminal Court View Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://yuquanle.github.io/">Yuquan Le</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://csee.hnu.edu.cn/people/quanzhe">Zhe Quan</a><sup>1&#9993;</sup>,</span>
+              <a href="https://csee.hnu.edu.cn/people/xiaozheng">Zheng Xiao</a><sup>1&#9993;</sup>,</span>
             <span class="author-block">
-              <a href="https://jiaweiwang-ai.github.io/">Jiawei Wang</a><sup>1</sup>,
+              <a href="https://csee.hnu.edu.cn/people/dingyan">Yan Ding</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://csee.hnu.edu.cn/people/caoda">Da Cao</a><sup>1</sup>,
+              <a href="https://aseschng.github.io/default.html">Eng Siong Chng</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=mSpHqSUAAAAJ&hl=zh-CN&oi=ao">Kenli Li</a><sup>1</sup>,
@@ -86,14 +86,14 @@
         
         </span>
            <span class="author-block">
-           <h1 class="title is-4"><font color="#B03A2E"><b>TALSP 2024</b></font></h1>
+           <h1 class="title is-4"><font color="#B03A2E"><b>TNNLS 2025</b></font></h1>
         </span>
           
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://ieeexplore.ieee.org/document/10439618"
+                <a href="xxx"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -103,7 +103,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/yuquanle/RR"
+                <a href="https://github.com/yuquanle/Case-type-oriented-metrics"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -113,7 +113,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://cail.oss-cn-qingdao.aliyuncs.com/CAIL2018_ALL_DATA.zip"
+                <a href="https://github.com/bigdata-ustc/C3VG"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -150,10 +150,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p> The legal judgment prediction (LJP) task is to automatically decide appropriate law articles, charges, and term of penalty for giving the fact description of a law case. It considerably influences many real legal applications and has thus attracted the attention of legal practitioners and AI researchers in recent years. In real scenarios, many confusing charges are encountered, makes LJP challenging. Intuitively, for a controversial legal case,
-legal practitioners usually first obtain various possible judgment results as candidates based on the fact description of the case; then these candidates generally need to be carefully considered based on the facts and the rationality of the candidates. Inspired by this observation, this paper presents a novel Recall & Ranking framework, dubbed as R2, which attempts to formalize LJP as a two-stage problem. The recall stage is designed to collect high-likelihood judgment results for a given case; these results are regarded as candidates for the ranking stage. The ranking
-stage introduces a verification technique to learn the relationships between the fact description and the candidates. It treats the partially correct candidates as semi-negative samples, and thus has a certain ability to distinguish confusing candidates. Moreover, we devise a comprehensive judgment strategy to refine the final judgment results by comprehensively considering the rationality of multiple probable candidates. We carry out numerous experiments on two widely used benchmark datasets. The experimental results demonstrate our proposed approach’s effectiveness compared to the other competitive baselines.
-            
+          <p>  Criminal Court View Generation (CCVG) task aims to produce succinct and coherent summaries of fact descriptions, providing interpretable opinions for verdicts. Traditional text generation evaluation metrics, such as ROUGE, BLEU, and BERTSCORE, are extensively employed for this task and measure performance by averaging the assessment scores of all samples within the test set. However, these sample-averaged metrics encounter two primarily dilemmas: 1) they fail to fairly assess overall evaluation scores across different case types, and 2) they overlook the measurement of the degree of performance imbalance between case types. To fill this research gap, we propose two novel case-type-oriented evaluation metrics: Case-type-oriented Text Generation (CTG) and Case-type-oriented Imbalance Performance (CIP). First, CTG mitigates the unfair assessment among different case types by assigning equal weight to each type. Second, CIP evaluates performance imbalance by measuring the distance between the performance of each case type and the overall performance. We provide three Theorems to elucidate the properties of CIP, demonstrating that CIP can effectively identify the extent to which a CCVG model achieves balanced generation performance across different case types. Furthermore, we propose an embarrassingly simple and effective Charge-Guided Encoder-Decoder (CGED) framework to enhance performance fairly across different case types in encoder-decoder pre-trained language models. Code is available at: https://yuquanle.github.io/Case-type-oriented-metrics-homepage/.
                   </p>
         </div>
       </div>
@@ -165,8 +162,8 @@ stage introduces a verification technique to learn the relationships between the
 <section class="section pipeline-section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-      <h2 class="title is-3">Pipeline</h2>
-        <img src="static/images/pipeline.png" width="960" height="660">
+      <h2 class="title is-3">Case-type-oriented Text Generation evaluation metrics</h2>
+        <img src="static/images/CTO.png" width="960" height="660">
     </div>
   </div>
 </section>
@@ -182,14 +179,11 @@ stage introduces a verification technique to learn the relationships between the
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>  @article{le2024boldsymbol,
-  title={$$\backslash$boldsymbol $\{$R$\}$\^{}$\{$2$\}$ $: A Novel Recall \& Ranking Framework for Legal Judgment Prediction},
-  author={Le, Yuquan and Quan, Zhe and Wang, Jiawei and Cao, Da and Li, Kenli},
-  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing},
-  volume={32},
-  pages={1609--1622},
-  year={2024},
-  publisher={IEEE}
+    <pre><code>  @article{le2025cto,
+  title={On Imbalance in Case Types: Evaluating and Enhancing PLMs for Criminal Court View Generation},
+  author={Le, Yuquan and Xiao, Zheng and Ding, Yan and Chng, Eng Siong and Li, Kenli},
+  journal={TNNLS},
+  year={2025}
 }
     </code></pre>
   </div>
